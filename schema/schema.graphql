@@ -1,0 +1,8 @@
+type Query {
+    getPosts: [Post]
+}
+
+schema {
+    query: Query
+}
+
