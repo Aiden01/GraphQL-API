@@ -5,3 +5,13 @@ type Post {
     userId: Int!
     user: User!
 }
+
+input PostInput {
+    title: String!
+    body: String!
+    userId: Int!
+}
+
+extend type Mutation {
+    createPost (post: PostInput): Post
+}

@@ -3,7 +3,13 @@ type Query {
     users(id: Int): [User]
 }
 
+type Mutation {
+    foo: Int
+}
+
 schema {
     query: Query
+    mutation: Mutation
 }
+
 

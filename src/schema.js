@@ -4,7 +4,6 @@ import { join } from 'path'
 import * as resolvers from './resolvers'
 
 
-
 const SCHEMA_DIRECTORY = join(__dirname, '../schema')
 
 const Schema = makeExecutableSchema({
