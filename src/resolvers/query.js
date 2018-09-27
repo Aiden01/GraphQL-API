@@ -15,6 +15,16 @@ async function posts(_obj, { id }, _ctx, _info) {
     return posts
 }
 
+async function users(_obj, { id }, _ctx, _info) {
+    const response = await got('https://jsonplaceholder.typicode.com/users', { json: true }).catch(console.error)
+    const users = response.body
+    if(typeof id !== 'undefined') {
+        return users.filter(({ id }) => id === id)
+    }
+    return users
+}
+
 export const Query = {
-    posts
+    posts,
+    users
 }
