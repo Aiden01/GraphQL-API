@@ -4,6 +4,7 @@ type User {
     name: String!
     email: String!
     address: Address!
+    posts: [Post]
     phone: String!
     website: String!
     company: Company!
