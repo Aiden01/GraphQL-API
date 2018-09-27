@@ -1,13 +1,5 @@
-import { getPosts } from './query'
-import { user } from './post'
-
-const Query = {
-    getPosts
-}
-
-const Post = {
-    user
-}
+import { Query } from './query'
+import { Post } from './post'
 
 export { 
     Query,

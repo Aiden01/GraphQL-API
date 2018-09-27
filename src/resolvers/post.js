@@ -8,11 +8,15 @@ export const Posts = [
     { id: 6, userId: 2, title: 'Lorem ipsum', body: 'Lorem ipsum a bit longer because this is the body'}, 
 ]
 
-export const Users = [{
+const Users = [{
     id: 1, username: 'bob', email: 'bob', 
     id: 2, username: 'bob2', email: 'bob2', 
 }]
 
-export function user({ userId }, _args, _context) {
+function user({ userId }, _args, _context) {
     return Users.find(({ id }) => id === userId)
+}
+
+export const Post = {
+    user
 }

@@ -1,5 +1,5 @@
 type Query {
-    getPosts: [Post]
+    posts(id: Int): [Post]
 }
 
 schema {
