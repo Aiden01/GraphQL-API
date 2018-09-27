@@ -1,11 +1,18 @@
 
-import { Posts } from './post'
+import got from 'got'
 
-function posts(obj, { id }, ctx, _info) {
+async function posts(_obj, { id }, _ctx, _info) {
+
+    const response = await got('https://jsonplaceholder.typicode.com/posts', {
+        json: true
+    }).catch(console.error)
+
+    const posts = response.body
+
     if(typeof id !== 'undefined') {
-        return Posts.filter(post => post.id === id)
+        return posts.filter(post => post.id === id)
     }
-    return Posts
+    return posts
 }
 
 export const Query = {
