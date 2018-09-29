@@ -1,6 +1,7 @@
 type Query {
     posts(id: Int): [Post]
     users(id: Int): [User]
+    todos(id: Int): [Todo]
 }
 
 type Mutation {

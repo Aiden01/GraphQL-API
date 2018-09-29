@@ -15,7 +15,7 @@ async function posts(_obj, { id }, _ctx, _info) {
     return posts
 }
 
-async function users(obj, { id }, _ctx, _info) {
+async function users(_obj, { id }, _ctx, _info) {
 
     const response = await got('https://jsonplaceholder.typicode.com/users', { json: true }).catch(console.error)
     const users = response.body
@@ -25,7 +25,17 @@ async function users(obj, { id }, _ctx, _info) {
     return users
 }
 
+async function todos(_obj, { id }, _ctx, _info) {
+    const response = await got('https://jsonplaceholder.typicode.com/todos', { json: true }).catch(console.error)
+    const todos = response.body
+    if(typeof id !== 'undefined') {
+        return todos.filter(todo => todo.id === id)
+    }
+    return todos
+}
+
 export const Query = {
     posts,
-    users
+    users,
+    todos
 }
