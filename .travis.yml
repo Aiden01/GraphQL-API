@@ -6,6 +6,8 @@ deploy:
   provider: heroku
   api_key:
     secure: "$HEROKU_KEY"
+  app: graphql-fake-api
   on:
     branch: master
+    repo: Webd01/GraphQL-API
   skip_cleanup: true
