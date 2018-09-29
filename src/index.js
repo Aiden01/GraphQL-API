@@ -1,6 +1,6 @@
 import { ApolloServer } from 'apollo-server'
-import * as Mutation from './src/mutations'
-import { Schema } from './src/schema'
+import * as Mutation from './mutations'
+import { Schema } from './schema'
 
 
 
