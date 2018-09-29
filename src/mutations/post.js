@@ -3,7 +3,6 @@ import got from 'got'
 
 export async function createPost({ post: { title, body, userId } }) {
 
-    console.log(`https://jsonplaceholder.typicode.com/users/${userId}`)
     const response = await got(`https://jsonplaceholder.typicode.com/users/${userId}`, { json: true }).catch(console.error)
     if(response.statusCode === 404) {
         throw new Error(`User with id ${userId} does not exist.`)
